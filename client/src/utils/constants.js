@@ -1,1 +1,1 @@
-export const SERVER_URL = process.env.NODE_ENV==="production"?"":"http://localhost:8000"
+export const SERVER_URL = process.env.NODE_ENV==="production"?"https://voting-p8vut.ondigitalocean.app":"http://localhost:8000"
