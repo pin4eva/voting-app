@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import SidebarComp from "../components/dashbord/Sidebar";
 import HeaderComp from "../components/HeaderComp";
 
 const DashboardLayout = ({ children }) => {

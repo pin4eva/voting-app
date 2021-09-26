@@ -16,10 +16,6 @@ const LogIn = () => {
 		window.location.href = "/";
 	};
 
-	const onFailureSuccess = (res) => {
-		console.log("Login Failed:", res);
-	};
-
 	return (
 		<Wrapper>
 			<div className="container login">

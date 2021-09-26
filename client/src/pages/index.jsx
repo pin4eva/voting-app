@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { UserAtom } from "../atoms/userAtom";
 // import Displaychart from "../components/Displaychart";
 import Firstbody from "../components/Firstbody";
 import VoteCardComp from "../components/VoteCard";
@@ -10,8 +8,8 @@ import VoteCardComp from "../components/VoteCard";
 const HomePage = () => {
 	const [election, setElection] = useState({});
 	const [candidates, setCandidates] = useState([]);
-	const [voters, setVoters] = useState([]);
-	const user = useRecoilValue(UserAtom);
+	// const [voters, setVoters] = useState([]);
+	// const user = useRecoilValue(UserAtom);
 
 	useEffect(() => {
 		const getElection = async () => {
@@ -20,7 +18,7 @@ const HomePage = () => {
 
 				setElection(data);
 				setCandidates(data?.candidates);
-				setVoters(data?.voters);
+				// setVoters(data?.voters);
 			} catch (error) {
 				console.log(error);
 			}

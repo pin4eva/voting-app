@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
@@ -22,7 +23,8 @@ const CandidateTable = () => {
 
 	const handleDelete = async (id) => {
 		try {
-			const {} = await axios.delete(`/vote/candidate/${id}`);
+			const { data } = await axios.delete(`/vote/candidate/${id}`);
+			console.log(data);
 		} catch (error) {
 			console.log(error);
 		}
