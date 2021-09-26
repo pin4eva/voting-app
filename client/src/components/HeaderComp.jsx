@@ -12,8 +12,8 @@ const HeaderComp = () => {
 
 	return (
 		<Wrapper className="navbar-light bg-light">
-			<nav class="navbar  container">
-				<Link to="/" class="navbar-brand image1">
+			<nav className="navbar  container">
+				<Link to="/" className="navbar-brand image1">
 					<img src={logo} alt="" />
 					<p className="m-0 ms-2">Smart-Vote</p>
 				</Link>

@@ -18,6 +18,7 @@ const HomePage = () => {
 
 				setElection(data);
 				setCandidates(data?.candidates);
+				console.log("data :", data);
 				// setVoters(data?.voters);
 			} catch (error) {
 				console.log(error);

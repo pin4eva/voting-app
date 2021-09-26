@@ -10,12 +10,6 @@ const AdminPage = () => {
 		<div>
 			<h1>Welcome Admin !</h1>
 
-			<div className="d-flex justify-content-around">
-				<button className="btn btn-primary">Create new Election</button>
-				<button className="btn btn-primary ms-2">Register Candidate</button>
-				<button className="btn btn-primary ms-2">View Candidate</button>
-				<button className="btn btn-primary ms-2">View Election Results</button>
-			</div>
 			<div className="election-view mt-3">
 				<h2>Elections</h2>
 				<ElectionTable />

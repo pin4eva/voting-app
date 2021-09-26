@@ -14,9 +14,9 @@ import Routes from "./routes";
 // import "bootstrap/scss/bootstrap.scss";
 import "./styles/custom.scss";
 import "./styles/index.scss";
-// import "rsuite/dist/rsuite.css";
+import "rsuite/dist/rsuite.min.css";
 import { SERVER_URL } from "./utils/constants";
-import "rsuite";
+// import "rsuite";
 
 const token = Cookies.get("token");
 axios.defaults.baseURL = SERVER_URL;
@@ -73,6 +73,7 @@ const App = () => {
 
 	useEffect(() => {
 		socket.on("user-voted", (data) => toast(data));
+		socket.on("error-vote", (data) => toast(data));
 	}, []);
 
 	return (

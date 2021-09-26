@@ -1,35 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import contest1 from "../assets/contestant 1.png";
 import contest2 from "../assets/contestant 2.png";
 
-import { Link } from "react-router-dom";
-
 const Firstbody = () => {
+	// const [show, setShow] = useState(false);
 	return (
 		<div className="grid container1">
+			{/* <LoginComp show={show} onHide={() => setShow(false)} /> */}
 			<div className="g-col-6 box1 ">
-				<h1 class="display-6 disPlay">
+				<h1 className="display-6 disPlay">
 					Vote Your Favourite <br />
 					Instructors <b>Here</b>{" "}
 				</h1>
 
-				<p class="h4 Ph1">
+				<p className="h4 Ph1">
 					Our design projects are fresh and simple and will <br />
 					benefit your business greatly. Learn more about our work!
 				</p>
 
 				<Link to="/#vote">
-					<button type="button" class="btn btn-warning d-btn">
+					<button type="button" className="btn btn-warning d-btn">
 						VOTE NOW
 					</button>
 				</Link>
-				<Link to="/login">
-					<button
-						type="button"
-						class=" text-uppercase btn btn-outline-secondary d-btn2"
-					>
-						Login to VOTE
-					</button>
+				<Link
+					to="/login"
+					type="button"
+					className="text-uppercase btn btn-outline-secondary d-btn2"
+				>
+					Login to VOTE
 				</Link>
 			</div>
 
