@@ -13,7 +13,7 @@ import { voteRoutes } from "./routes/voteRoutes";
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-const origin = process.env.NODE_END==="production" ? "https://smartvote-app.vercel.app": "http://localhost:3000"
+const origin = ["https://smartvote-app.vercel.app", "http://localhost:3000"]
 // Middlewares
 app.use(cors({ origin, credentials: true }));
 app.use(express.json());
