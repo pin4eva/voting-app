@@ -9,6 +9,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import FrontLayout from "./layouts/FrontLayout";
 import HomePage from "./pages";
 import AdminPage from "./pages/dashboard/admin";
+import UsersPage from "./pages/dashboard/users";
 import LogIn from "./pages/LogIn";
 
 const AppRoute = ({
@@ -67,6 +68,14 @@ const Routes = ({ isAuth }) => {
 					isAuth={isAuth}
 					component={AdminPage}
 					path="/admin"
+					exact
+				/>
+				<AppRoute
+					layout={DashboardLayout}
+					locked={true}
+					isAuth={isAuth}
+					component={UsersPage}
+					path="/users"
 				/>
 			</Switch>
 		</Router>

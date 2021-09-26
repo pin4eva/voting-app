@@ -31,7 +31,7 @@ app.use("/user", userRoutes);
 // server functions;
 const server = http.createServer(app);
 
-export const io = new Server(server, { cors: { origin: ['http://localhost:3000'] } });
+export const io = new Server(server, { cors: { origin: ['http://localhost:3000',"https://smartvote-app.vercel.app/"] } });
 
 const startServer = async () => {
     try {

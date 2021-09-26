@@ -6,6 +6,7 @@ const UserSchema = new mongoose.Schema({
     googleId: String,
     name: {type: String, required: true},
     image: String,
+    isAdmin: {type:Boolean, default: false}
     
 });
 
