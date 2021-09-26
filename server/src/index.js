@@ -46,9 +46,9 @@ const startServer = async () => {
                 const { election, voter, candidate } = data;
                 if (!election || !voter || !candidate) return socket.to(socket.id).emit("error-vote", "Include an election, voter or candidate");
 
-                //  const ele = await Election.findById(election);
+                 const ele = await Election.findById(election);
 
-                // if (ele.voters.includes(voter)) return socket.emit("error-vote", "You have voted before");
+                if (ele.voters.includes(voter)) return socket.emit("error-vote", "You have voted before");
                 try {
                     const vote = await Vote.create(data);
 

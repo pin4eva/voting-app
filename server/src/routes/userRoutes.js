@@ -6,7 +6,7 @@ import {auth} from "../utils/auth"
 const router = Router();
 
 // Get Users
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
     
     try {
         const users = await User.find().select("_id name isAdmin");
