@@ -18,14 +18,17 @@ const Firstbody = () => {
 					benefit your business greatly. Learn more about our work!
 				</p>
 
-				<Link to="/logIn">
+				<Link to="/#vote">
 					<button type="button" class="btn btn-warning d-btn">
 						VOTE NOW
 					</button>
 				</Link>
-				<Link to="/Register">
-					<button type="button" class="btn btn-outline-secondary d-btn2">
-						JOIN SMARTVOTE
+				<Link to="/login">
+					<button
+						type="button"
+						class=" text-uppercase btn btn-outline-secondary d-btn2"
+					>
+						Login to VOTE
 					</button>
 				</Link>
 			</div>

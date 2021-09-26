@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "@fortawesome/fontawesome-free/css/all.css";
 import axios from "axios";
 import "bootstrap/dist/js/bootstrap";
@@ -10,9 +11,12 @@ import { socket } from ".";
 import { ElectionAtom } from "./atoms/ElectionAtom";
 import { UserAtom, UsersAtom } from "./atoms/userAtom";
 import Routes from "./routes";
+// import "bootstrap/scss/bootstrap.scss";
 import "./styles/custom.scss";
 import "./styles/index.scss";
+// import "rsuite/dist/rsuite.css";
 import { SERVER_URL } from "./utils/constants";
+import "rsuite";
 
 const token = Cookies.get("token");
 axios.defaults.baseURL = SERVER_URL;

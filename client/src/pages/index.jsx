@@ -32,11 +32,15 @@ const HomePage = () => {
 		<Wrapper className="homepage">
 			<div className="container">
 				<Firstbody />
-				<h2 className="mt-4">
-					{election?.type} {election?.year}
-				</h2>
-				<div className="vote-list">
-					{election?.candidates?.map((candidate, i) => (
+				{election?.type ? (
+					<h2 className="mt-4">
+						{election?.type} {election?.year}
+					</h2>
+				) : (
+					<h2 className="mt-4">There is no on-going election</h2>
+				)}
+				<div className="vote-list" id="vote">
+					{candidates?.map((candidate, i) => (
 						<VoteCardComp key={i} candidate={candidate} />
 					))}
 				</div>
