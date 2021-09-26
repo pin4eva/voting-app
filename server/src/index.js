@@ -13,8 +13,9 @@ import { voteRoutes } from "./routes/voteRoutes";
 const PORT = process.env.PORT || 8000;
 const app = express();
 
+const origin = ['http://localhost:3000',"https://smartvote-app.vercel.app/"]
 // Middlewares
-app.use(cors({ origin: ["http://localhost:3000", "https://voting.com"], credentials: true }));
+app.use(cors({ origin, credentials: true }));
 app.use(express.json());
 
 
@@ -31,7 +32,7 @@ app.use("/user", userRoutes);
 // server functions;
 const server = http.createServer(app);
 
-export const io = new Server(server, { cors: { origin: ['http://localhost:3000',"https://smartvote-app.vercel.app/"] } });
+export const io = new Server(server, { cors: { origin } });
 
 const startServer = async () => {
     try {
