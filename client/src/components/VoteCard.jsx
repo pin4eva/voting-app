@@ -20,11 +20,11 @@ const VoteCardComp = ({ candidate }) => {
 				// socket.on("user-voted", (data) => console.log(data));
 				setVotes([data, ...votes]);
 			}
-			socket.off("vote-response");
+			// socket.off("vote-response");
 		});
 
-		return () => socket.off("vote-response");
-	}, []);
+		// return () => socket.off("vote-response");
+	});
 
 	const handleVote = async () => {
 		if (!user) return router.push("/login");
