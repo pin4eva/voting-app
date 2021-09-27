@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import http from "http";
+import session from "cookie-session";
 import { Server } from "socket.io";
 import { connectDB } from "./db";
 import User from "./models/User";
@@ -8,6 +9,8 @@ import { Candidate, Election, Vote } from "./models/Vote";
 import { authRoutes } from "./routes/authRoutes";
 import { userRoutes } from "./routes/userRoutes";
 import { voteRoutes } from "./routes/voteRoutes";
+import config from "./utils/config";
+
 
 
 const PORT = process.env.PORT || 8000;
@@ -17,6 +20,12 @@ const origin = ["https://smartvote-app.vercel.app", "http://localhost:3000"]
 // Middlewares
 app.use(cors({ origin, credentials: true }));
 app.use(express.json());
+app.use(session({
+    signed: false,
+    secret: config.SECRET,
+    secure: process.env.NODE_ENV === "production",
+    name: "__vote"
+}))
 
 
 

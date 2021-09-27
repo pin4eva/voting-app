@@ -73,7 +73,7 @@ const App = () => {
 
 	useEffect(() => {
 		socket.on("user-voted", (data) => toast(data));
-		socket.on("error-vote", (data) => toast(data));
+		socket.on("error-vote", (data) => toast.error(data));
 	}, []);
 
 	return (

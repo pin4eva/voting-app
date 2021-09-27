@@ -38,6 +38,7 @@ router.delete("/single/:id", auth, async (req, res) => {
 })
 
 router.post("/admin", auth, async (req, res) => {
+    if(!req.user.isAdmin) return res.status(403).send("Only admin can make admin")
     let user = await User.findOne({ _id: req.body._id }).select("-password");
     if (!user) return res.status(404).send("User record not found");
     try {

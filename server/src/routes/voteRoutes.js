@@ -8,6 +8,8 @@ const router = Router();
 
 // Create Candidate
 router.post("/candidate/create", auth, async (req, res) => {
+   
+     if(!req.user.isAdmin) return res.status(403).send("Unauthorized")
     const { election } = req.body;
     try {
         let candidate = await Candidate.create(req.body);
@@ -39,6 +41,7 @@ router.get("/candidate", async (req, res) => {
 })
 
 router.delete("/candidate/:id", auth, async (req, res) => {
+    if(!req.user.isAdmin) return res.status(403).send("Unauthorized")
     try {
         const candidate = await Candidate.findByIdAndDelete(req.params.id);
         // await Election.updateOne({_id: candidate.election},{$pullAll:{voters:}})
@@ -50,6 +53,7 @@ router.delete("/candidate/:id", auth, async (req, res) => {
 
 //election
 router.post("/election/create", auth, async (req, res) => {
+     if(!req.user.isAdmin) return res.status(403).send("Unauthorized")
     try {
         const election = await Election.create(req.body);
         res.send(election);
@@ -60,6 +64,7 @@ router.post("/election/create", auth, async (req, res) => {
 
 // set current Election
 router.post("/election/current", auth, async (req, res) => {
+     if(!req.user.isAdmin) return res.status(403).send("Unauthorized")
      await Election.updateMany({},{$set:{isCurrent:false}});
     try {
         const election = await Election.findOneAndUpdate({ _id: req.body.election },{$set:{isCurrent:true}},{new:true});
@@ -108,7 +113,8 @@ router.get("/election/single/:id", async (req, res) => {
 })
 
 
-router.delete("/election/:id", async (req, res) => {
+router.delete("/election/:id", auth, async (req, res) => {
+     if(!req.user.isAdmin) return res.status(403).send("Unauthorized")
     try {
         const election = await Election.findById(req.params.id);
         await Candidate.deleteMany({ _id: { $in: election.candidates } });
